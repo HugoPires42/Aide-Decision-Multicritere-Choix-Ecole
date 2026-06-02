@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html, body {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-stone-50 text-stone-900 font-sans antialiased;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.05) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(20, 184, 166, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  #root {
+    @apply min-h-full;
+  }
+
+  /* Suppression de l'apparence native des sliders */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  /* Carte standard : fond blanc, bordure subtile, ombre douce */
+  .card {
+    @apply bg-white rounded-2xl border border-stone-200/80;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.03),
+      0 4px 12px rgba(0, 0, 0, 0.02);
+  }
+
+  /* Carte interactive (survol) */
+  .card-hover {
+    @apply transition-all duration-200;
+  }
+  .card-hover:hover {
+    @apply -translate-y-0.5;
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.04),
+      0 12px 28px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Pastille (badge) */
+  .chip {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full
+           text-xs font-semibold;
+  }
+
+  /* Effet de "scintillement" sur la barre de score du gagnant */
+  .shimmer-bar {
+    background-size: 200% 100%;
+    @apply animate-shimmer;
+  }
+}
+
+/* Scrollbar discrète */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(214 211 209 / 0.6);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(168 162 158 / 0.8);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
