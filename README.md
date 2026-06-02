@@ -121,4 +121,4 @@ palmarès DD&RS).
 
 ## Auteur
 
-Hugo Soulier-Pires — M1 MIAGE, Université Paris-Dauphine (PSL), 2025-2026.
+Hugo Pires — M1 MIAGE, Université Paris-Dauphine (PSL), 2025-2026.
